@@ -1,0 +1,10 @@
+<h1>Your score</h1>
+<%if @answer == 'Not existing'%>
+  <p>Sorry but <%= @word %> does not seem to be a valid word...</p>
+<% elsif @answer== 'Not in grid' %>
+  <p>Sorry but <%= @word %> can't be build out of <%= @letters.join(", ") %></p>
+<% else%>
+  <p>Congratulations! <%= @word %> is a valid word!</p>
+<% end%>
+
+<%= link_to "Play again", new_path %>
